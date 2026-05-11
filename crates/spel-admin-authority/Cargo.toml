@@ -1,0 +1,17 @@
+[package]
+name = "spel-admin-authority"
+version = "0.1.0"
+description = "Reusable admin authority access-control primitives for SPEL/LEE programs."
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[lib]
+path = "src/lib.rs"
+
+[features]
+default = []
+borsh = ["dep:borsh"]
+
+[dependencies]
+borsh = { version = "1.0", default-features = false, features = ["derive"], optional = true }

@@ -1,0 +1,24 @@
+[package]
+name = "spel-gated-config-program"
+version = "0.1.0"
+description = "Reference SPEL program source for spel-admin-authority integration."
+edition = "2021"
+license = "MIT OR Apache-2.0"
+rust-version = "1.81"
+publish = false
+
+[dependencies]
+spel-admin-authority = { path = "../../crates/spel-admin-authority", features = ["borsh"] }
+
+# Pinned to the SPEL commit inspected while implementing RFP-001.
+# Replace with the maintainers' preferred tag or path dependency when integrating
+# inside a logos-scaffold project.
+spel-framework = { git = "https://github.com/logos-co/spel.git", rev = "ea2f998ed13c5ad66ef1cafe51de859bef27f872", package = "spel-framework" }
+nssa_core = { git = "https://github.com/logos-blockchain/logos-execution-zone.git", tag = "v0.2.0-rc3" }
+borsh = "1.5"
+risc0-zkvm = { version = "=3.0.5", features = ["std"] }
+ruint = "=1.17.0"
+
+[[bin]]
+name = "admin_gated_config"
+path = "methods/guest/src/bin/admin_gated_config.rs"

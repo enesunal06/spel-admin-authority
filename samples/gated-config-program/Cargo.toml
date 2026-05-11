@@ -1,0 +1,14 @@
+[package]
+name = "gated-config-program"
+version = "0.1.0"
+description = "Host-side sample harness that imports spel-admin-authority."
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish = false
+
+[dependencies]
+spel-admin-authority = { path = "../../crates/spel-admin-authority" }
+
+[lib]
+path = "src/lib.rs"

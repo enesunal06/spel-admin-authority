@@ -1,5 +1,7 @@
 # SPEL Admin Authority Library
 
+⚠️ Built with significant AI assistance while exploring the Logos RFP-001 admin-authority pattern and the SPEL/LEE model. This repository is an early prototype and has not been audited or reviewed by Logos/SPEL maintainers. It should not be considered production-ready infrastructure.
+
 A small access-control library for LEE programs built with SPEL. It gives a program one admin authority, lets that admin transfer control, and lets the admin permanently renounce control.
 
 ## Why This Exists

@@ -24,6 +24,43 @@ What is not claimed: unresolved framework-level behavior such as a one-line SPEL
 - `samples/gated-config-program`: compiled Rust harness that imports the library and tests the admin lifecycle.
 - `samples/spel-gated-config-program`: reference SPEL source using `#[lez_program]`, `#[instruction]`, `#[account(...)]`, and explicit `assert_admin(...)` calls. It is outside the default workspace because it needs pinned SPEL/LEE Git dependencies and a RISC Zero guest toolchain.
 
+## Repository Structure
+
+```text
+.
+├── .github/workflows/ci.yml
+├── crates/
+│   └── spel-admin-authority/
+│       ├── Cargo.toml
+│       └── src/
+│           ├── config.rs
+│           ├── error.rs
+│           ├── key.rs
+│           ├── lib.rs
+│           ├── signer.rs
+│           ├── state.rs
+│           └── validator.rs
+├── docs/rfp-traceability.md
+├── samples/
+│   ├── gated-config-program/
+│   │   ├── Cargo.toml
+│   │   └── src/lib.rs
+│   └── spel-gated-config-program/
+│       ├── Cargo.toml
+│       ├── README.md
+│       └── methods/guest/src/bin/admin_gated_config.rs
+├── scripts/localnet-smoke.sh
+├── .gitignore
+├── Cargo.lock
+├── Cargo.toml
+└── README.md
+
+- crates/spel-admin-authority contains the framework-agnostic core library.
+- samples/ contains host-side and SPEL integration examples.
+- docs/rfp-traceability.md maps implementation details back to the RFP-001 requirements.
+
+```
+
 ## Dependency
 
 For a path dependency:
